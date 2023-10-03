@@ -2,6 +2,7 @@ FROM --platform=linux/amd64 ubuntu:latest
 
 ENV KUBECTL_VERSION=1.27.0
 ENV IBMCLOUD_VERSION=2.20.0
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update -y && \
     apt install -y --no-install-recommends bash curl git ca-certificates python3 ansible && \
