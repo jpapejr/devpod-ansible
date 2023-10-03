@@ -5,7 +5,7 @@ ENV IBMCLOUD_VERSION=2.20.0
 
 
 RUN apt update -y && \
-     DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt install -y --no-install-recommends bash curl git ca-certificates python3 ansible && \
+     DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt install -y --no-install-recommends bash curl git ca-certificates python3 ansible ansible-lint && \
     mkdir /root/bin && \
     curl -k https://download.clis.cloud.ibm.com/ibm-cloud-cli/2.20.0/IBM_Cloud_CLI_${IBMCLOUD_VERSION}_amd64.tar.gz -o out.tar.gz && \
     tar xvzf out.tar.gz && \
