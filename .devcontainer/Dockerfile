@@ -2,10 +2,10 @@ FROM --platform=linux/amd64 ubuntu:latest
 
 ENV KUBECTL_VERSION=1.27.0
 ENV IBMCLOUD_VERSION=2.20.0
-ENV DEBIAN_FRONTEND=noninteractive
+
 
 RUN apt update -y && \
-    apt install -y --no-install-recommends bash curl git ca-certificates python3 ansible && \
+     DEBIAN_FRONTEND=noninteractive TZ="America/New_York" apt install -y --no-install-recommends bash curl git ca-certificates python3 ansible && \
     mkdir /root/bin && \
     curl -k https://download.clis.cloud.ibm.com/ibm-cloud-cli/2.20.0/IBM_Cloud_CLI_${IBMCLOUD_VERSION}_amd64.tar.gz -o out.tar.gz && \
     tar xvzf out.tar.gz && \
